@@ -3,9 +3,9 @@
 JavaScript and TypeScript bundle for vim, this bundle provides syntax
 highlighting and improved indentation.
 
-Note: This is my personal fork of pangloss/vim-javascript that removes flow
+**Note**: This is my personal fork of [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript.git) that removes flow
 support and adds TypeScript instead. Other than that, it should match the
-origin and I will mostly be pulling from there and trying to submit any
+origin and I will mostly be pulling from there and trying to submit any other
 changes upstream.
 
 
