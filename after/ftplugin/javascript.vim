@@ -4,6 +4,7 @@
 " URL:          https://github.com/pangloss/vim-javascript
 
 setlocal iskeyword+=$ suffixesadd+=.js
+setlocal nowrap
 
 if exists('b:undo_ftplugin')
   let b:undo_ftplugin .= ' | setlocal iskeyword< suffixesadd<'
