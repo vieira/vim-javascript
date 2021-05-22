@@ -576,6 +576,9 @@ syntax match jsOperator /??/
   \ skipwhite skipempty
   \ nextgroup=@jsExpression
 
+syntax match jsFuncArgPartApp contained /\%([(,]\s*\)\@<=?\%(\s*[,)]\)\@=/
+  \ containedin=jsFuncArgs
+
 syntax match jsGenerator contained /\*/
   \ skipwhite skipempty
   \ nextgroup=jsFuncName,jsFuncArgs,tsFunctionGroup
@@ -807,7 +810,7 @@ if exists("javascript_plugin_typescript")
   runtime extras/typescript.vim
 endif
 
-syntax cluster jsExpression contains=jsBracket,jsParen,jsObject,jsTernaryIf,jsTaggedTemplate,jsTemplateString,jsString,jsRegexpString,jsNumber,jsFloat,jsOperator,jsOperatorKeyword,jsBooleanTrue,jsBooleanFalse,jsNull,jsFunction,jsArrowFunction,jsGlobalObjects,jsExceptions,jsFutureKeys,jsDomErrNo,jsDomNodeConsts,jsHtmlEvents,jsFuncCall,jsUndefined,jsNan,jsPrototype,jsBuiltins,jsNoise,jsClassDefinition,tsInterfaceDefinition,jsArrowFunction,jsArrowFuncArgs,jsParensError,jsComment,jsArguments,jsThis,jsSuper,jsDo,jsForAwait,jsAsyncKeyword,jsStatement,jsDot,tsAssertion
+syntax cluster jsExpression contains=jsBracket,jsParen,jsObject,jsTernaryIf,jsTaggedTemplate,jsTemplateString,jsString,jsRegexpString,jsNumber,jsFloat,jsOperator,jsOperatorKeyword,jsBooleanTrue,jsBooleanFalse,jsNull,jsFunction,jsArrowFunction,jsGlobalObjects,jsExceptions,jsFutureKeys,jsDomErrNo,jsDomNodeConsts,jsHtmlEvents,jsFuncCall,jsUndefined,jsNan,jsPrototype,jsBuiltins,jsNoise,jsClassDefinition,tsInterfaceDefinition,jsArrowFunction,jsArrowFuncArgs,jsParensError,jsComment,jsArguments,jsThis,jsSuper,jsDo,jsForAwait,jsAsyncKeyword,jsStatement,jsDot,tsAssertion,jsFuncArgPartApp
 
 syntax cluster jsAll contains=@jsExpression,jsStorageClass,jsConditional,jsRepeat,jsReturn,jsException,jsTry,jsNoise,jsBlockLabel,tsAssertion
 
@@ -867,6 +870,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink jsClassFuncName        jsFuncName
   HiLink jsObjectFuncName       Function
   HiLink jsArguments            Special
+  HiLink jsFuncArgPartApp       Special
   HiLink jsError                Error
   HiLink jsParensError          Error
   HiLink jsOperatorKeyword      jsOperator
