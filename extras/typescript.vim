@@ -262,7 +262,21 @@ syntax keyword tsDeclareKeyword declare
 
 syntax keyword tsEnumKeyword enum
   \ skipwhite skipempty
-  \ nextgroup=jsFuncName
+  \ nextgroup=tsEnumName
+
+syntax match tsEnumName contained /\<\K\k*/
+  \ skipwhite skipempty
+  \ nextgroup=tsEnumBlock
+
+syntax region tsEnumBlock contained
+  \ start=/{/
+  \ end=/}/
+  \ contains=tsEnumProperty,jsNumber,jsFloat,jsString,jsOperator,jsFuncCall
+  \ extend fold
+
+syntax match tsEnumProperty contained /\<\K\k*\ze\s*[=,]/
+  \ skipwhite skipempty
+  \ oneline
 
 syntax keyword tsImplementsKeyword contained implements
   \ skipwhite skipempty
@@ -331,7 +345,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink tsInterfaceKeyword     Keyword
   HiLink tsInterfaceDefinition  JsFuncName
   HiLink tsImplementsKeyword    Keyword
-  HiLink tsModifier             jsModifier
+  HiLink tsModifier             JsModifier
   HiLink tsNoise                Noise
   HiLink tsObjectKey            JsObjectKey
   HiLink tsUnionOperator        JsOperator
@@ -341,5 +355,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink tsImportType           PreProc
   HiLink tsTypeValue            PreProc
   HiLink tsObjectFuncName       JsObjectFuncName
+  HiLink tsEnumName             JsFuncName
+  HiLink tsEnumProperty         JsClassProperty
   delcommand HiLink
 endif
