@@ -28,7 +28,6 @@ alternatively, use a package manager like [vim-plug](https://github.com/junegunn
 ```bash
 cd after/
 cp ftplugin/typescriptreact.vim ftplugin/typescript.vim
-cp indent/typescriptreact.vim indent/typescript.vim
 cp syntax/typescriptreact.vim syntax/typescript.vim
 ```
 
