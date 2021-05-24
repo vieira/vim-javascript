@@ -23,6 +23,27 @@ since Vim 8.
 
 alternatively, use a package manager like [vim-plug](https://github.com/junegunn/vim-plug)
 
+### Using with [MaxMEllon/vim-jsx-pretty](https://github.com/MaxMEllon/vim-jsx-pretty)
+
+```bash
+cd after/
+cp ftplugin/typescriptreact.vim ftplugin/typescript.vim
+cp indent/typescriptreact.vim indent/typescript.vim
+cp syntax/typescriptreact.vim syntax/typescript.vim
+```
+
+Edit `syntax/tsx.vim` and add the block `if hlexists("tsNoise")` below the `if get(g:, 'vim_jsx_pretty_disable_tsx', 0)`:
+
+```viml
+if get(g:, 'vim_jsx_pretty_disable_tsx', 0)
+  finish
+endif
+
+if hlexists("tsNoise") " vieira/vim-javascript
+  runtime syntax/jsx.vim
+  finish
+endif
+```
 
 ## Configuration Variables
 
