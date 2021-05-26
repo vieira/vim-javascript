@@ -12,6 +12,5 @@ if exists(":CompilerSet") != 2
   command! -nargs=* CompilerSet setlocal <args>
 endif
 
-CompilerSet makeprg=npx\ --quiet\ eslint\ --fix\ -f\ compact\ %:p
-CompilerSet errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %m
-CompilerSet errorformat+=%-G%.%#
+CompilerSet makeprg=npx\ --quiet\ eslint\ --fix\ -f\ unix\ %:p
+CompilerSet errorformat=%f:%l:%c:%m,%-G%.%#
