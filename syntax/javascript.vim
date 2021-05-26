@@ -205,7 +205,7 @@ syntax keyword jsSuper super contained
 
 syntax keyword jsReturn return contained
   \ skipwhite
-  \ nextgroup=@jsExpression'
+  \ nextgroup=@jsExpression
 
 " Statement Keywords
 syntax match jsBlockLabel /\<\K\k*\s*::\@!/
