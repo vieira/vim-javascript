@@ -44,6 +44,19 @@ if hlexists("tsNoise") " vieira/vim-javascript
 endif
 ```
 
+### Using with [jparise/vim-graphql](https://github.com/jparise/vim-graphql)
+
+```bash
+cd after/syntax/typescript
+```
+
+Edit `graphql.vim` and replace simply with:
+
+```viml
+runtime! after/syntax/javascript/graphql.vim
+```
+
+
 ## Configuration Variables
 
 The following variables control certain syntax highlighting plugins. You can
