@@ -472,7 +472,7 @@ syntax region jsFuncBlock contained
   \ matchgroup=jsFuncBraces
   \ start=/{/
   \ end=/}/
-  \ contains=@jsAll,jsBlock,jsModifier
+  \ contains=@jsAll,jsBlock
   \ extend fold
 
 syntax region jsIfElseBlock contained
@@ -812,7 +812,7 @@ endif
 
 syntax cluster jsExpression contains=jsBracket,jsParen,jsObject,jsTernaryIf,jsTaggedTemplate,jsTemplateString,jsString,jsRegexpString,jsNumber,jsFloat,jsOperator,jsOperatorKeyword,jsBooleanTrue,jsBooleanFalse,jsNull,jsFunction,jsArrowFunction,jsGlobalObjects,jsExceptions,jsFutureKeys,jsDomErrNo,jsDomNodeConsts,jsHtmlEvents,jsFuncCall,jsUndefined,jsNan,jsPrototype,jsBuiltins,jsNoise,jsClassDefinition,tsInterfaceDefinition,jsArrowFunction,jsArrowFuncArgs,jsParensError,jsComment,jsArguments,jsThis,jsSuper,jsDo,jsForAwait,jsAsyncKeyword,jsStatement,jsDot,tsAssertion,jsFuncArgPartApp
 
-syntax cluster jsAll contains=@jsExpression,jsStorageClass,jsConditional,jsRepeat,jsReturn,jsException,jsTry,jsNoise,jsBlockLabel,tsAssertion
+syntax cluster jsAll contains=@jsExpression,jsStorageClass,jsConditional,jsRepeat,jsReturn,jsException,jsTry,jsNoise,jsBlockLabel,jsModifier,tsAssertion
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
