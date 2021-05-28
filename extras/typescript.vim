@@ -261,6 +261,10 @@ syntax keyword tsDeclareKeyword declare
   \ skipwhite skipempty
   \ nextgroup=jsFuncName,tsEnumKeyword
 
+syntax keyword tsAbstractKeyword abstract
+  \ skipwhite skipempty
+  \ nextgroup=jsClassKeyword
+
 syntax keyword tsEnumKeyword enum
   \ skipwhite skipempty
   \ nextgroup=tsEnumName
@@ -343,6 +347,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink tsAssertion            Keyword
   HiLink tsEnumKeyword          Keyword
   HiLink tsDeclareKeyword       Keyword
+  HiLink tsAbstractKeyword      PreProc
   HiLink tsInterfaceKeyword     Keyword
   HiLink tsInterfaceDefinition  JsFuncName
   HiLink tsImplementsKeyword    Keyword
