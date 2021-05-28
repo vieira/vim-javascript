@@ -47,6 +47,7 @@ syntax keyword tsModifier contained
   \ private
   \ protected
   \ readonly
+  \ override
   \ containedin=jsClassBlock,jsFuncArgs
 
 syntax keyword tsType contained
