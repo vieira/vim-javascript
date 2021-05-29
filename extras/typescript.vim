@@ -7,11 +7,10 @@ syntax region tsDefinition contained
   \ end=/\%(\s*[,=;)\n]\)\@=/
   \ contains=@tsCluster,tsGeneric
   \ containedin=jsParen,jsClassBlock
-
-syntax keyword tsAssertion as
-  \ skipwhite skipempty
-  \ nextgroup=@tsCluster
-  \ containedin=@jsExpression
+  
+syntax keyword tsAssertion contained as
+  \ skipempty skipwhite
+  \ nextgroup=tsType
 
 syntax region tsArgumentDef contained
   \ start=/\%(?\)\=:/
