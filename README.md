@@ -29,6 +29,7 @@ alternatively, use a package manager like [vim-plug](https://github.com/junegunn
 cd after/
 cp ftplugin/typescriptreact.vim ftplugin/typescript.vim
 cp syntax/typescriptreact.vim syntax/typescript.vim
+cp indent/typescriptreact.vim syntax/typescript.vim
 ```
 
 Edit `syntax/tsx.vim` and add the block `if hlexists("tsNoise")` below the `if get(g:, 'vim_jsx_pretty_disable_tsx', 0)`:
@@ -43,6 +44,8 @@ if hlexists("tsNoise") " vieira/vim-javascript
   finish
 endif
 ```
+
+Edit `indent/tsx.vim` and remove the line `runtime! indent/typescript.vim`.
 
 ### Using with [jparise/vim-graphql](https://github.com/jparise/vim-graphql)
 
