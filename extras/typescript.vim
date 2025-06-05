@@ -97,14 +97,6 @@ syntax region tsGeneric
   \ contains=@tsCluster
   \ containedin=@jsExpression
 
-syntax region tsGeneric contained
-  \ matchgroup=tsNoise
-  \ start=/</
-  \ end=/>\s*[=(]\@=/
-  \ oneline
-  \ contains=@tsCluster
-  \ containedin=@jsExpression
-
 syntax region tsObjectGeneric contained matchgroup=tsNoise
   \ start=/\k\@<=</
   \ end=/>/
